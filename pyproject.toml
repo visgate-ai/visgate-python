@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "visgate-sdk"
+version = "0.0.2"
+description = "Python client for visgate API — unified vision ai gateway (Fal, Replicate, Runway)."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [{ name = "uzunenes", email = "uzun.ens@gmail.com" }]
+keywords = ["visgate", "ai", "vision", "api", "fal", "replicate", "runway"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "httpx>=0.24",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pytest-asyncio>=0.21",
+    "ruff>=0.1",
+]
+veo = [
+    "google-genai>=1.0",
+]
+
+[project.urls]
+Homepage = "https://visgateai.com"
+Documentation = "https://github.com/visgate-ai/visgate-python#readme"
+Repository = "https://github.com/visgate-ai/visgate-python"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+asyncio_mode = "auto"

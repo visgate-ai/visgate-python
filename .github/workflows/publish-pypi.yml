@@ -1,0 +1,46 @@
+# Publish visgate-sdk to PyPI on GitHub Release.
+#
+# Authentication (in order of preference):
+#   1. PyPI trusted publisher (recommended, no secrets needed)
+#      Setup: https://docs.pypi.org/trusted-publishers/adding-a-publisher/
+#   2. PYPI_API_TOKEN secret (fallback)
+name: Publish to PyPI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify version matches release tag
+        run: |
+          TAG="${{ github.event.release.tag_name }}"
+          VER=$(grep -m1 '^version = ' pyproject.toml | sed 's/version = "\(.*\)"/\1/')
+          if [ "v${VER}" != "${TAG}" ]; then
+            echo "::error::pyproject.toml version (${VER}) does not match release tag (${TAG}). Bump version to match before publishing."
+            exit 1
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build
+        run: pip install build
+
+      - name: Build package
+        run: python -m build
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}

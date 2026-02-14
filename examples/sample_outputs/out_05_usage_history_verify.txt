@@ -1,0 +1,6 @@
+usage_total_requests=257
+usage_cached_requests=3
+usage_total_billed_cost=0.13
+usage_logs_count=10
+dashboard_total_generations=257
+dashboard_total_cost_usd=0.13

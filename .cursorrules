@@ -1,0 +1,28 @@
+You are working on visgate-python, the open-source Python SDK for the visgate API.
+
+Stack: Python 3.9+, httpx, pytest, ruff. Build: setuptools via pyproject.toml.
+
+Architecture:
+- src/visgate_sdk/client.py — Client (sync) and AsyncClient (async), httpx-based with retry logic
+- src/visgate_sdk/resources/ — one module per API resource (generate, images, videos, models, usage, providers)
+- src/visgate_sdk/exceptions.py — typed exception hierarchy (VisgateError base)
+- src/visgate_sdk/_utils.py — internal helpers (datetime parsing)
+- tests/test_client.py — unit tests (pytest + pytest-asyncio)
+- examples/ — numbered scripts tested against the live API
+
+Key design decisions:
+- api_key auto-discovers from VISGATE_API_KEY env var (like openai/stripe SDKs)
+- Version is single-sourced from pyproject.toml via importlib.metadata with fallback
+- _handle_response is a shared module-level function (not duplicated per client)
+- generate() is a proper method on Client, not a callable resource
+- max_retries with exponential backoff for transient errors (429, 5xx)
+- All BYOK keys (fal, replicate, runway) are constructor parameters
+- All result types have __repr__ for readable debugging
+- py.typed marker for PEP 561 compliance
+
+Rules:
+- All modules use `from __future__ import annotations` for Python 3.9 compat
+- All user-facing text must be English only
+- Every public export must be in __init__.py __all__
+- Run `ruff check src/ tests/` and `pytest tests/ -v` before any commit
+- No unnecessary dependencies; httpx is the only runtime dep

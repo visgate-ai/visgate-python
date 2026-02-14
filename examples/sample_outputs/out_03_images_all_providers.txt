@@ -1,0 +1,6 @@
+fal_image_id=eb201d02-65fb-4582-bf7c-281dd8f3e2f8
+fal_image_provider=fal
+replicate_image_id=5dd702f3-9699-4e6b-93c2-f4801004a517
+replicate_image_provider=replicate
+runway_image_id=0777fd84-1d04-49e4-be44-944e2cd892f5
+runway_image_provider=runway

@@ -1,0 +1,4 @@
+auth_ok=true
+organization_id=OYw7Bs28wKjFBzk3hedV
+organization_name=Enes Uzun's Org
+role=api-key

@@ -1,0 +1,2 @@
+OK /health: status=ok, version=0.2.0
+OK /models: 5 models returned (limit=5), total=1704

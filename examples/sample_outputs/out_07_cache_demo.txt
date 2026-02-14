@@ -1,0 +1,11 @@
+(no stdout)
+
+--- stderr ---
+Traceback (most recent call last):
+  File "/home/uzunenes/Documents/GitHub/visgate-python/examples/07_cache_demo.py", line 11, in <module>
+    from _common import create_client
+  File "/home/uzunenes/Documents/GitHub/visgate-python/examples/_common.py", line 11, in <module>
+    from visgate_sdk import Client
+ModuleNotFoundError: No module named 'visgate_sdk'
+
+--- exit_code=1 ---
