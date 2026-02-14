@@ -278,19 +278,19 @@ export VISGATE_REPLICATE_API_KEY="..."
 export VISGATE_RUNWAY_API_KEY="..."
 ```
 
-### Running with credentials (sifreler)
+### Running with a credentials file
 
-If you keep your keys in a file (e.g. `sifreler` in the project root, or any path set in `VISGATE_ENV_FILE`), use the runner so all examples get the right env:
+If you keep your keys in a file (e.g. `.env` in the project root, or any path set in `VISGATE_ENV_FILE`), use the runner so all examples get the right env:
 
 ```bash
-# From project root: load sifreler and run all examples
-python examples/run_with_sifreler.py
+# From project root: load .env and run all examples
+python examples/run_with_env.py
 
 # Run a single example
-python examples/run_with_sifreler.py 04_videos_all_providers.py
+python examples/run_with_env.py 04_videos_all_providers.py
 ```
 
-The runner parses `KEY=value` lines (skips empty and `#` comments) and sets `os.environ` before running. Default file is repo root `sifreler`; override with `VISGATE_ENV_FILE=/path/to/file`.
+The runner parses `KEY=value` lines (skips empty and `#` comments) and sets `os.environ` before running. Default file is repo root `.env`; override with `VISGATE_ENV_FILE=/path/to/file`.
 
 ### Run all steps
 
@@ -305,8 +305,8 @@ Each script writes stdout to `examples/sample_outputs/out_<script>.txt` and down
 **Low-cost run (no generation):** To verify the API without incurring cost, run only the non-generation steps: `00_smoke_sdk`, `01_live_api_smoke`, `00_auth_identity`, `01_models_catalog`, `05_usage_history_verify`, `06_provider_balances`, `09_provider_keys`, `10_api_keys`, `11_billing_readonly`. Generation steps (02, 03, 04, 07, 08, 12, 13) call image/video APIs and consume credits.
 
 ```bash
-# From project root (with .venv and sifreler): run cheap-only steps
-for s in 00_smoke_sdk 01_live_api_smoke 00_auth_identity 01_models_catalog 05_usage_history_verify 06_provider_balances 09_provider_keys 10_api_keys 11_billing_readonly; do .venv/bin/python examples/run_with_sifreler.py ${s}.py; done
+# From project root (with .venv and .env): run cheap-only steps
+for s in 00_smoke_sdk 01_live_api_smoke 00_auth_identity 01_models_catalog 05_usage_history_verify 06_provider_balances 09_provider_keys 10_api_keys 11_billing_readonly; do .venv/bin/python examples/run_with_env.py ${s}.py; done
 ```
 
 ### Step-by-step examples

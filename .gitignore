@@ -20,5 +20,4 @@ htmlcov/
 # Env / secrets
 .env
 .env.*
-sifreler
 *sa-key*.json

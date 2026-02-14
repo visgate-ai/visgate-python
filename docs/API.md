@@ -20,11 +20,11 @@ python examples/00_auth_identity.py
 python examples/run_all_capabilities.py
 ```
 
-**Run with a credentials file (e.g. `sifreler` in repo root):**
+**Run with a credentials file (e.g. `.env` in repo root):**
 
 ```bash
-python examples/run_with_sifreler.py
-python examples/run_with_sifreler.py 04_videos_all_providers.py   # single example
+python examples/run_with_env.py
+python examples/run_with_env.py 04_videos_all_providers.py   # single example
 ```
 
 **Low-cost run (no image/video generation):** `00_smoke_sdk`, `01_live_api_smoke`, `00_auth_identity`, `01_models_catalog`, `05_usage_history_verify`, `06_provider_balances`, `09_provider_keys`, `10_api_keys`, `11_billing_readonly`. See the [main README (Examples section)](../README.md#examples) for the full table and sample outputs.

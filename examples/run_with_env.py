@@ -1,8 +1,8 @@
 """
-Run examples with environment variables loaded from sifreler (or VISGATE_ENV_FILE).
+Run examples with environment variables loaded from an env file (default: .env in project root, or VISGATE_ENV_FILE).
 Usage:
-  python examples/run_with_sifreler.py
-  python examples/run_with_sifreler.py 04_videos_all_providers.py
+  python examples/run_with_env.py
+  python examples/run_with_env.py 04_videos_all_providers.py
 """
 from __future__ import annotations
 
@@ -39,7 +39,7 @@ def main() -> None:
     if env_file:
         path = Path(env_file)
     else:
-        path = Path(__file__).resolve().parent.parent / "sifreler"
+        path = Path(__file__).resolve().parent.parent / ".env"
     _load_env_file(path)
 
     base_dir = Path(__file__).resolve().parent
