@@ -201,7 +201,7 @@ All API traffic uses HTTPS. Provider API keys (BYOK) are encrypted at rest; othe
 
 ## Examples
 
-Run image and video generation across **Fal, Replicate, and Runway** through one API. Each script is self-contained. Run in order: 00_smoke → 01_live → 00_auth → 01_models → … → 13_async (simple to complex).
+Run image and video generation across **Fal, Replicate, and Runway** through one API. Each script is self-contained. Run in order: 00_smoke → 01_live → 00_auth → 01_models → … → 14_live_regression (simple to complex).
 
 ### Sample results (live API)
 
@@ -302,7 +302,7 @@ Steps `00_smoke_sdk` and `01_live_api_smoke` run without an API key. From `00_au
 
 Each script writes stdout to `examples/sample_outputs/out_<script>.txt` and downloads images/videos to `examples/sample_outputs/` when applicable.
 
-**Low-cost run (no generation):** To verify the API without incurring cost, run only the non-generation steps: `00_smoke_sdk`, `01_live_api_smoke`, `00_auth_identity`, `01_models_catalog`, `05_usage_history_verify`, `06_provider_balances`, `09_provider_keys`, `10_api_keys`, `11_billing_readonly`. Generation steps (02, 03, 04, 07, 08, 12, 13) call image/video APIs and consume credits.
+**Low-cost run (no generation):** To verify the API without incurring cost, run only the non-generation steps: `00_smoke_sdk`, `01_live_api_smoke`, `00_auth_identity`, `01_models_catalog`, `05_usage_history_verify`, `06_provider_balances`, `09_provider_keys`, `10_api_keys`, `11_billing_readonly`. Generation steps (02, 03, 04, 07, 08, 12, 13, 14) call image/video APIs and consume credits.
 
 ```bash
 # From project root (with .venv and .env): run cheap-only steps
@@ -329,6 +329,7 @@ for s in 00_smoke_sdk 01_live_api_smoke 00_auth_identity 01_models_catalog 05_us
 | 11_billing_readonly | Billing stats, info, pricing | `python3 examples/11_billing_readonly.py` | [out_11_billing_readonly.txt](examples/sample_outputs/out_11_billing_readonly.txt) |
 | 12_veo_from_catalog | Veo from catalog → generate → write | `python3 examples/12_veo_from_catalog.py` | [out_12_veo_from_catalog.txt](examples/sample_outputs/out_12_veo_from_catalog.txt) · [istanbul.mp4](examples/sample_outputs/istanbul.mp4) |
 | 13_async_generation | Async 202 + poll | `python3 examples/13_async_generation.py` | [out_13_async_generation.txt](examples/sample_outputs/out_13_async_generation.txt) |
+| 14_live_regression_smoke | Managed mode + exact cache + semantic + async image/video (assertive smoke) | `python3 examples/14_live_regression_smoke.py` | [out_14_live_regression_smoke.txt](examples/sample_outputs/out_14_live_regression_smoke.txt) |
 
 Full stdout for each step is in `examples/sample_outputs/out_<script>.txt`. All generated assets live in `examples/sample_outputs/`.
 

@@ -27,6 +27,7 @@ SCRIPTS = [
     "11_billing_readonly.py",
     "12_veo_from_catalog.py",
     "13_async_generation.py",   # 202 + poll
+    "14_live_regression_smoke.py",  # managed mode + cache + semantic + async end-to-end
 ]
 
 
