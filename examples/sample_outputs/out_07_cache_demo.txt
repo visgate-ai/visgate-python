@@ -1,11 +1,3 @@
-(no stdout)
-
---- stderr ---
-Traceback (most recent call last):
-  File "/home/uzunenes/Documents/GitHub/visgate-python/examples/07_cache_demo.py", line 11, in <module>
-    from _common import create_client
-  File "/home/uzunenes/Documents/GitHub/visgate-python/examples/_common.py", line 11, in <module>
-    from visgate_sdk import Client
-ModuleNotFoundError: No module named 'visgate_sdk'
-
---- exit_code=1 ---
+Request 1: cache_hit=True, latency_ms=864, cost=0.0
+Request 2: cache_hit=True, latency_ms=870, cost=0.0, provider_cost_avoided_micro=0
+OK: Second request was cache hit (latency may vary).

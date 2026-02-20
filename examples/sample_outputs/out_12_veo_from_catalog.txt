@@ -1,0 +1,4 @@
+  No Veo in catalog; using fallback fal-ai/veo3
+  Generating video (prompt=Cinematic drone over Istanbul at golden hour, Bosp...) ...
+  Got video_url
+  Written /workspaces/visgate-python/examples/sample_outputs/istanbul.mp4

@@ -1,0 +1,7 @@
+  Async video (wait=False)...
+  request_id=cbb9da31-6009-4a61-8909-935a6be36e0d
+  status=completed output_url=https://v3b.fal.media/files/b/0a8f3e3e/3vcnqEJn51c6bA0pr7Ep2_47bd93f5d7cd48399a379937f0443dcf.mp4
+  Async image (wait=False)...
+  request_id=1e811f73-87e2-4b5e-b156-faea71022aca
+  status=completed output_url=https://v3b.fal.media/files/b/0a8f3dbb/KpSIVeuvNzV0YXnolsK45.jpg
+  async_generation_done=true

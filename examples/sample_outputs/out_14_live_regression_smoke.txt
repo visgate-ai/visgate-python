@@ -1,0 +1,17 @@
+check=managed_mode
+managed_id=3f3a5123-8fa0-4847-90a6-bd10fa980310
+managed_mode=managed
+check=exact_cache
+exact_first_cache_hit=False
+exact_second_cache_hit=True
+check=semantic_cache
+semantic_first_cache_hit=False
+semantic_attempt_1_cache_hit=False
+semantic_attempt_2_cache_hit=True
+check=async_image
+async_image_status=completed
+async_image_output=https://v3b.fal.media/files/b/0a8f3eb9/_CIWZlVn7OJrzOYYt8MHl.jpg
+check=async_video
+async_video_status=completed
+async_video_output=https://v3b.fal.media/files/b/0a8f3ebf/jkDoxbRa6_Hb1kvK7zuZI_fd2d27782ede4b2abca6886322f41010.mp4
+live_regression_ok=true

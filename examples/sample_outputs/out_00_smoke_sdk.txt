@@ -1,1 +1,1 @@
-OK: visgate-sdk v0.2.3, all resources (images, models, videos, requests, usage, providers) initialized
+OK: visgate-sdk v0.0.3, all resources (images, models, videos, requests, usage, providers) initialized
